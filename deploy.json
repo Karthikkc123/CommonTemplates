@@ -56,9 +56,9 @@
     "azureTenantID": "[subscription().tenantId]",
     "resourceGroupName": "[resourceGroup().name]",
     "location": "[resourceGroup().location]",
-    "publicIpAddressName": "[concat('oilwells-mon-ip-', parameters('alias'))]",
+    "publicIpAddressName": "[concat('oilwells-d02-ip-', parameters('alias'))]",
     "dnsNameForPublicIP": "[concat('labvm-', uniqueString(resourceGroup().id))]",
-    "postInstallParameters": "[concat(' -azureUsername ', parameters('username'), ' -azurePassword ', parameters('password'), ' -azureTenantID ', variables('azureTenantID'), ' -azureSubscriptionID ', variables('azureSubscriptionID'))]",
+    "postInstallParameters": "[concat(' -azureUsername ', parameters('azureUsername'), ' -azurePassword ', parameters('azurePassword'), ' -azureTenantID ', variables('azureTenantID'), ' -azureSubscriptionID ', variables('azureSubscriptionID'))]",
     "automationMap": {
       "eastus": { "region": "East US 2" },
       "southcentralus": { "region": "South Central US" },
@@ -807,8 +807,8 @@
         },
         "osProfile": {
           "computerName": "[concat('server-', parameters('alias'))]",
-          "adminUsername": "[parameters('username')]",
-          "adminPassword": "[parameters('password')]",
+          "adminUsername": "[parameters('vmusername')]",
+          "adminPassword": "[parameters('vmpassword')]",
           "secrets": [],
           "allowExtensionOperations": true
         },
