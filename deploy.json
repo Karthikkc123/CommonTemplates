@@ -775,7 +775,7 @@
               ]
             },
             "protectedSettings": {
-              "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File psscript-01.ps1', variables('postInstallParameters'))]"
+              "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File mcw-Securing-the-IoT-end-to-end/scripts/psscript-01.ps1', variables('postInstallParameters'))]"
             }
           }
         }
